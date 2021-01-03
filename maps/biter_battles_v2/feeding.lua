@@ -23,15 +23,11 @@ end
 local function set_health_modifiers(force)
 	local evo = global.bb_evolution[force.name]
 
-	if evo >= .1 and evo < .2 then
-        for type, modifier in pairs(tables.health_modifiers["10-20"]) do
-			Force_health_booster.set_health_modifier_by_type(force.index, type, modifier)
-		end
-    end
-
-	if evo >= .2 and evo < .25 then
-		for type, modifier in pairs(tables.health_modifiers["20-25"]) do
-			Force_health_booster.set_health_modifier_by_type(force.index, type, modifier)
+	for phase, mods in pairs(tables.health_modifiers) do
+		if evo >= mods.lower and evo < mods.upper then
+			for type, modifier in pairs(mods) do
+				Force_health_booster.set_health_modifier_by_type(force.index, type, modifier)
+			end
 		end
 	end
 

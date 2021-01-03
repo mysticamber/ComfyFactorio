@@ -1,5 +1,99 @@
 local Public = {}
 
+-- Health Modifier Thresholds
+Public.health_modifiers = {
+	["10-20"] = {
+		["small-biter"] = 2,
+		["small-spitter"] = 2,
+		["medium-biter"] = 1,
+		["medium-spitter"] = 1,
+		["big-biter"] = 1,
+		["big-spitter"] = 1,
+		["behemoth-biter"] = 1,
+		["behemoth-spitter"] = 1
+	},
+	["20-25"] = {
+		["small-biter"] = 4,
+		["small-spitter"] = 4,
+		["medium-biter"] = 1,
+		["medium-spitter"] = 1,
+		["big-biter"] = 1,
+		["big-spitter"] = 1,
+		["behemoth-biter"] = 1,
+		["behemoth-spitter"] = 1
+	},
+	["25-40"] = {
+		["small-biter"] = 4,
+		["small-spitter"] = 4,
+		["medium-biter"] = 1,
+		["medium-spitter"] = 1,
+		["big-biter"] = 1,
+		["big-spitter"] = 1,
+		["behemoth-biter"] = 1,
+		["behemoth-spitter"] = 1
+	},
+	["40-65"] = {
+		["small-biter"] = 4,
+		["small-spitter"] = 4,
+		["medium-biter"] = 2.2,
+		["medium-spitter"] = 2.2,
+		["big-biter"] = 1,
+		["big-spitter"] = 1,
+		["behemoth-biter"] = 1,
+		["behemoth-spitter"] = 1
+	},
+	["65-80"] = {
+		["small-biter"] = 4,
+		["small-spitter"] = 4,
+		["medium-biter"] = 2.2,
+		["medium-spitter"] = 2.2,
+		["big-biter"] = 1.5,
+		["big-spitter"] = 1.5,
+		["behemoth-biter"] = 1,
+		["behemoth-spitter"] = 1
+	},
+	["80-100"] = {
+		["small-biter"] = 4,
+		["small-spitter"] = 4,
+		["medium-biter"] = 2.2,
+		["medium-spitter"] = 2.2,
+		["big-biter"] = 3,
+		["big-spitter"] = 3,
+		["behemoth-biter"] = 1,
+		["behemoth-spitter"] = 1
+	},
+	["100-115"] = {
+		["small-biter"] = 4,
+		["small-spitter"] = 4,
+		["medium-biter"] = 2.2,
+		["medium-spitter"] = 2.2,
+		["big-biter"] = 3,
+		["big-spitter"] = 3,
+		["behemoth-biter"] = 1.5,
+		["behemoth-spitter"] = 1.5
+	},
+	["115-130"] = {
+		["small-biter"] = 4,
+		["small-spitter"] = 4,
+		["medium-biter"] = 2.2,
+		["medium-spitter"] = 2.2,
+		["big-biter"] = 3,
+		["big-spitter"] = 3,
+		["behemoth-biter"] = 3,
+		["behemoth-spitter"] = 3
+	},
+	["130-1000"] = {
+		["small-biter"] = 4,
+		["small-spitter"] = 4,
+		["medium-biter"] = 2.2,
+		["medium-spitter"] = 2.2,
+		["big-biter"] = 3,
+		["big-spitter"] = 3,
+		["behemoth-biter"] = 6,
+		["behemoth-spitter"] = 6
+	},
+}
+
 -- List of forces that will be affected by ammo modifier
 Public.ammo_modified_forces_list = {"north", "south", "spectator"}
 

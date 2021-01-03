@@ -20,16 +20,38 @@ function get_instant_threat_player_count_modifier()
 	return m
 end
 
-local function set_biter_endgame_modifiers(force)
-	if force.evolution_factor ~= 1 then return end
-	local damage_mod = math.round((global.bb_evolution[force.name] - 1) * 0.50, 3)
-	force.set_ammo_damage_modifier("melee", damage_mod)
-	force.set_ammo_damage_modifier("biological", damage_mod)
-	force.set_ammo_damage_modifier("artillery-shell", damage_mod)
-	force.set_ammo_damage_modifier("flamethrower", damage_mod)
-	force.set_ammo_damage_modifier("laser-turret", damage_mod)
-	
-	Force_health_booster.set_health_modifier(force.index, Functions.get_health_modifier(force))
+local function set_health_modifiers(force)
+	local evo = global.bb_evolution[force.name]
+
+	if evo >= .1 and evo < .2 then
+        for type, modifier in pairs(tables.health_modifiers["10-20"]) do
+			Force_health_booster.set_health_modifier_by_type(force.index, type, modifier)
+		end
+    end
+
+	if evo >= .2 and evo < .25 then
+		for type, modifier in pairs(tables.health_modifiers["20-25"]) do
+			Force_health_booster.set_health_modifier_by_type(force.index, type, modifier)
+		end
+	end
+
+	-- Old modifier based on evo
+	-- Force_health_booster.set_health_modifier(force.index, Functions.get_health_modifier(force))
+end
+
+local function set_biter_modifiers(force)
+
+	-- At 100% evo cut the damage effectiveness by 50%
+	if force.evolution_factor == 1 then
+		local damage_mod = math.round((global.bb_evolution[force.name] - 1) * 0.50, 3)
+		force.set_ammo_damage_modifier("melee", damage_mod)
+		force.set_ammo_damage_modifier("biological", damage_mod)
+		force.set_ammo_damage_modifier("artillery-shell", damage_mod)
+		force.set_ammo_damage_modifier("flamethrower", damage_mod)
+		force.set_ammo_damage_modifier("laser-turret", damage_mod)
+	end
+
+	set_health_modifiers(force)
 end
 
 local function get_enemy_team_of(team)
@@ -181,7 +203,7 @@ function set_evo_and_threat(flask_amount, food, biter_force_name)
 	--SET THREAT INCOME
 	global.bb_threat_income[biter_force_name] = global.bb_evolution[biter_force_name] * 25
 	
-	set_biter_endgame_modifiers(game.forces[biter_force_name])
+	set_biter_modifiers(game.forces[biter_force_name])
 end
 
 local function feed_biters(player, food)	

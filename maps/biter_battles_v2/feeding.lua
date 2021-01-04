@@ -1,3 +1,4 @@
+local Public = {}
 local bb_config = require "maps.biter_battles_v2.config"
 local Force_health_booster = require "modules.force_health_booster"
 local Functions = require "maps.biter_battles_v2.functions"
@@ -37,15 +38,16 @@ end
 
 local function set_biter_modifiers(force)
 
+	-- Legacy End Game Mode
 	-- At 100% evo cut the damage effectiveness by 50%
-	if force.evolution_factor == 1 then
-		local damage_mod = math.round((global.bb_evolution[force.name] - 1) * 0.50, 3)
-		force.set_ammo_damage_modifier("melee", damage_mod)
-		force.set_ammo_damage_modifier("biological", damage_mod)
-		force.set_ammo_damage_modifier("artillery-shell", damage_mod)
-		force.set_ammo_damage_modifier("flamethrower", damage_mod)
-		force.set_ammo_damage_modifier("laser-turret", damage_mod)
-	end
+	--if force.evolution_factor == 1 then
+		--local damage_mod = math.round((global.bb_evolution[force.name] - 1) * 0.50, 3)
+		--force.set_ammo_damage_modifier("melee", damage_mod)
+		--force.set_ammo_damage_modifier("biological", damage_mod)
+		--force.set_ammo_damage_modifier("artillery-shell", damage_mod)
+		--force.set_ammo_damage_modifier("flamethrower", damage_mod)
+		--force.set_ammo_damage_modifier("laser-turret", damage_mod)
+	--end
 
 	set_health_modifiers(force)
 end
@@ -226,4 +228,6 @@ local function feed_biters(player, food)
 	add_stats(player, food, flask_amount ,biter_force_name, evolution_before_feed, threat_before_feed)
 end
 
-return feed_biters
+Public.set_biter_modifiers = set_biter_modifiers
+Public.feed_biters = feed_biters
+return Public

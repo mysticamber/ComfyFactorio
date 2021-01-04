@@ -9,6 +9,7 @@ local Mirror_terrain = require "maps.biter_battles_v2.mirror_terrain"
 require 'modules.simple_tags'
 local Team_manager = require "maps.biter_battles_v2.team_manager"
 local Terrain = require "maps.biter_battles_v2.terrain"
+local feeding = require "maps.biter_battles_v2.feeding"
 
 require "maps.biter_battles_v2.sciencelogs_tab"
 require 'maps.biter_battles_v2.commands'
@@ -90,6 +91,11 @@ local function on_tick()
 	if tick % 60 == 0 then 
 		global.bb_threat["north_biters"] = global.bb_threat["north_biters"] + global.bb_threat_income["north_biters"]
 		global.bb_threat["south_biters"] = global.bb_threat["south_biters"] + global.bb_threat_income["south_biters"]
+    end
+
+	if tick % 10 == 0 then
+        feeding.set_biter_modifiers(game.forces["north_biters"])
+		feeding.set_biter_modifiers(game.forces["south_biters"])
 	end
 
 	if tick % 180 == 0 then Gui.refresh() end

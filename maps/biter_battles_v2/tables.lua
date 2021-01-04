@@ -7,7 +7,7 @@ Public.health_modifiers = {
 		["upper"] = .2,
 		["types"] = {
 			["small-biter"] = 2,
-			["small-spitter"] = 2,
+			["small-spitter"] = 2
 		}
 	},
 	["Biter Phase 2"] = {
@@ -15,7 +15,7 @@ Public.health_modifiers = {
 		["upper"] = .25,
 		["types"] = {
 			["small-biter"] = 4,
-			["small-spitter"] = 4,
+			["small-spitter"] = 4
 		}
 	},
 	["Biter Phase 3"] = {
@@ -23,7 +23,7 @@ Public.health_modifiers = {
 		["upper"] = .4,
 		["types"] = {
 			["small-biter"] = 4,
-			["small-spitter"] = 4,
+			["small-spitter"] = 4
 		}
 	},
 	["Biter Phase 4"] = {
@@ -33,7 +33,7 @@ Public.health_modifiers = {
 			["small-biter"] = 4,
 			["small-spitter"] = 4,
 			["medium-biter"] = 2.2,
-			["medium-spitter"] = 2.2,
+			["medium-spitter"] = 2.2
 		}
 	},
 	["Biter Phase 5"] = {
@@ -45,7 +45,7 @@ Public.health_modifiers = {
 			["medium-biter"] = 2.2,
 			["medium-spitter"] = 2.2,
 			["big-biter"] = 1.5,
-			["big-spitter"] = 1.5,
+			["big-spitter"] = 1.5
 		}
 	},
 	["Biter Phase 6"] = {
@@ -57,7 +57,7 @@ Public.health_modifiers = {
 			["medium-biter"] = 2.2,
 			["medium-spitter"] = 2.2,
 			["big-biter"] = 3,
-			["big-spitter"] = 3,
+			["big-spitter"] = 3
 		}
 	},
 	["Biter Phase 7"] = {

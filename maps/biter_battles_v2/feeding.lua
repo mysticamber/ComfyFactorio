@@ -25,7 +25,7 @@ local function set_health_modifiers(force)
 
 	for phase, mods in pairs(tables.health_modifiers) do
 		if evo >= mods.lower and evo < mods.upper then
-			for type, modifier in pairs(mods) do
+			for type, modifier in pairs(mods.types) do
 				Force_health_booster.set_health_modifier_by_type(force.index, type, modifier)
 			end
 		end

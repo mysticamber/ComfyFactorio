@@ -254,8 +254,6 @@ function Public.share_chat(event)
 			game.forces.south.print(player.name .. tag .. " (spectator): ".. event.message, color)
 		end
 	end
-
-
 end
 
 function Public.spy_fish(player)

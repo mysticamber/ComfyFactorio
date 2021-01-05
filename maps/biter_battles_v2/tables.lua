@@ -3,7 +3,7 @@ local Public = {}
 -- Health Modifier Thresholds
 Public.health_modifiers = {
 	["Biter Phase 1"] = {
-        ["lower"] = .1,
+		["lower"] = .1,
 		["upper"] = .2,
 		["types"] = {
 			["small-biter"] = 2,

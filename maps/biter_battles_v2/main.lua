@@ -91,10 +91,9 @@ local function on_tick()
 	if tick % 60 == 0 then 
 		global.bb_threat["north_biters"] = global.bb_threat["north_biters"] + global.bb_threat_income["north_biters"]
 		global.bb_threat["south_biters"] = global.bb_threat["south_biters"] + global.bb_threat_income["south_biters"]
-    end
 
-	if tick % 10 == 0 then
-        feeding.set_biter_modifiers(game.forces["north_biters"])
+		-- Update biter HP modifier every second
+		feeding.set_biter_modifiers(game.forces["north_biters"])
 		feeding.set_biter_modifiers(game.forces["south_biters"])
 	end
 

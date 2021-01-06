@@ -33,6 +33,8 @@ local function init_health_modifiers(force_index, type)
 		if not fhb[force_index][type] then fhb[force_index][type] = {} end
 		return fhb[force_index][type]
 	end
+
+	return fhb[force_index]
 end
 
 local function get_health_modifiers(force_index, type)

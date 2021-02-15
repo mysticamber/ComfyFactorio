@@ -21,6 +21,8 @@ require 'antigrief'
 require 'modules.corpse_markers'
 require 'modules.floaty_chat'
 require 'modules.show_inventory'
+require 'modules.simple_tags'
+require "modules.spawners_contain_biters"
 require 'utils.debug.command'
 
 require 'comfy_panel.main'

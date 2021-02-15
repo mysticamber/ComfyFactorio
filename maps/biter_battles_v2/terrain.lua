@@ -581,38 +581,6 @@ function Public.generate_silo(surface)
 	turret2.insert({name = "firearm-magazine", count = 10})
 	turret2.active = false
 end
---[[
-function Public.generate_spawn_goodies(surface)
-	local tiles = surface.find_tiles_filtered({name = "stone-path"})
-	table.shuffle_table(tiles)
-	local budget = 1500
-	local min_roll = 30
-	local max_roll = 600
-	local blacklist = {
-		["automation-science-pack"] = true,
-		["logistic-science-pack"] = true,
-		["military-science-pack"] = true,
-		["chemical-science-pack"] = true,
-		["production-science-pack"] = true,
-		["utility-science-pack"] = true,
-		["space-science-pack"] = true,
-		["loader"] = true,
-		["fast-loader"] = true,
-		["express-loader"] = true,		
-	}
-	local container_names = {"wooden-chest", "wooden-chest", "iron-chest"}
-	for k, tile in pairs(tiles) do
-		if budget <= 0 then return end
-		if surface.can_place_entity({name = "wooden-chest", position = tile.position, force = "neutral"}) then
-			local v = math_random(min_roll, max_roll)
-			local item_stacks = LootRaffle.roll(v, 4, blacklist)		
-			local container = surface.create_entity({name = container_names[math_random(1, 3)], position = tile.position, force = "neutral"})
-			for _, item_stack in pairs(item_stacks) do container.insert(item_stack)	end
-			budget = budget - v
-		end
-	end
-end
-]]
 
 function Public.minable_wrecks(event)
 	local entity = event.entity

@@ -127,7 +127,7 @@ function Public.source_surface()
 	Terrain.generate_additional_rocks(surface)
 	Terrain.generate_silo(surface)
 	Terrain.draw_spawn_circle(surface)
-	--Terrain.generate_spawn_goodies(surface)
+
 end
 
 function Public.tables()

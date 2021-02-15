@@ -13,6 +13,9 @@ local Terrain = require "maps.biter_battles_v2.terrain"
 require "maps.biter_battles_v2.sciencelogs_tab"
 require 'maps.biter_battles_v2.commands'
 
+local Event = require 'utils.event'
+require "maps.biter_battles_v2.spec_spy"
+require "maps.biter_battles_v2.difficulty_vote"
 
 local function on_player_joined_game(event)
 	local surface = game.surfaces["biter_battles"]
@@ -141,7 +144,6 @@ local function on_init()
 	Init.load_spawn()
 end
 
-local Event = require 'utils.event'
 Event.add(defines.events.on_research_finished, Ai.unlock_satellite)			--free silo space tech
 Event.add(defines.events.on_entity_died, Ai.on_entity_died)
 Event.add(defines.events.on_built_entity, on_built_entity)
@@ -159,5 +161,4 @@ Event.add(defines.events.on_robot_built_tile, on_robot_built_tile)
 Event.add(defines.events.on_tick, on_tick)
 Event.on_init(on_init)
 
-require "maps.biter_battles_v2.spec_spy"
-require "maps.biter_battles_v2.difficulty_vote"
+

@@ -4,7 +4,8 @@ local Server = require 'utils.server'
 local bb_config = require "maps.biter_battles_v2.config"
 local event = require 'utils.event'
 local Functions = require "maps.biter_battles_v2.functions"
-local feed_the_biters = require "maps.biter_battles_v2.feeding"
+local feeding = require "maps.biter_battles_v2.feeding"
+local feed_the_biters = feeding.feed_biters
 local Tables = require "maps.biter_battles_v2.tables"
 
 local wait_messages = Tables.wait_messages

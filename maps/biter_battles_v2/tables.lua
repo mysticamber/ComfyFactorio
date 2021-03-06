@@ -3,32 +3,32 @@ local Public = {}
 -- Health Modifier Thresholds
 Public.health_modifiers = {
 	["Biter Phase 1"] = {
-		["lower"] = .1,
-		["upper"] = .2,
+		["lower"] = 0.1,
+		["upper"] = 0.2,
 		["types"] = {
 			["small-biter"] = 2,
 			["small-spitter"] = 2
 		}
 	},
 	["Biter Phase 2"] = {
-		["lower"] = .2,
-		["upper"] = .25,
+		["lower"] = 0.2,
+		["upper"] = 0.25,
 		["types"] = {
 			["small-biter"] = 4,
 			["small-spitter"] = 4
 		}
 	},
 	["Biter Phase 3"] = {
-		["lower"] = .25,
-		["upper"] = .4,
+		["lower"] = 0.25,
+		["upper"] = 0.4,
 		["types"] = {
 			["small-biter"] = 4,
 			["small-spitter"] = 4
 		}
 	},
 	["Biter Phase 4"] = {
-		["lower"] = .4,
-		["upper"] = .65,
+		["lower"] = 0.4,
+		["upper"] = 0.65,
 		["types"] = {
 			["small-biter"] = 4,
 			["small-spitter"] = 4,
@@ -37,8 +37,8 @@ Public.health_modifiers = {
 		}
 	},
 	["Biter Phase 5"] = {
-		["lower"] = .65,
-		["upper"] = .8,
+		["lower"] = 0.65,
+		["upper"] = 0.8,
 		["types"] = {
 			["small-biter"] = 4,
 			["small-spitter"] = 4,
@@ -49,7 +49,7 @@ Public.health_modifiers = {
 		}
 	},
 	["Biter Phase 6"] = {
-		["lower"] = .8,
+		["lower"] = 0.8,
 		["upper"] = 1,
 		["types"] = {
 			["small-biter"] = 4,

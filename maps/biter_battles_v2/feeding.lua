@@ -2,7 +2,7 @@ local Public = {}
 local bb_config = require "maps.biter_battles_v2.config"
 local Functions = require "maps.biter_battles_v2.functions"
 local Server = require 'utils.server'
-
+local Force_health_booster = require "modules.force_health_booster"
 local tables = require "maps.biter_battles_v2.tables"
 local food_values = tables.food_values
 local force_translation = tables.force_translation
@@ -30,24 +30,9 @@ local function set_health_modifiers(force)
 			end
 		end
 	end
-
-	-- Old modifier based on evo
-	-- Force_health_booster.set_health_modifier(force.index, Functions.get_health_modifier(force))
 end
 
 local function set_biter_modifiers(force)
-
-	-- Legacy End Game Mode
-	-- At 100% evo cut the damage effectiveness by 50%
-	--if force.evolution_factor == 1 then
-		--local damage_mod = math.round((global.bb_evolution[force.name] - 1) * 0.50, 3)
-		--force.set_ammo_damage_modifier("melee", damage_mod)
-		--force.set_ammo_damage_modifier("biological", damage_mod)
-		--force.set_ammo_damage_modifier("artillery-shell", damage_mod)
-		--force.set_ammo_damage_modifier("flamethrower", damage_mod)
-		--force.set_ammo_damage_modifier("laser-turret", damage_mod)
-	--end
-
 	set_health_modifiers(force)
 end
 

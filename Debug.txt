@@ -1,0 +1,6 @@
+{data_set:"colors",key:"mysticamber",value:'{color={{r=0.81499999761581421,g=0.024000000208616257,b=0,a=0.5}},chat={{r=1,g=0.16599999368190765,b=0.14100000262260437,a=1}}}'}
+
+
+{data_set:"jailed",key:"mysticamber",value:'{jailed=true,actor="mysticamber",reason="testing stuff"}'}
+
+{data_set:"jailed",key:"mysticamber"}

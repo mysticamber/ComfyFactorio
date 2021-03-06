@@ -7,6 +7,7 @@ local Gui = require "maps.biter_battles_v2.gui"
 local Init = require "maps.biter_battles_v2.init"
 local Mirror_terrain = require "maps.biter_battles_v2.mirror_terrain"
 require 'modules.simple_tags'
+local Map_info = require 'modules.map_info'
 local Team_manager = require "maps.biter_battles_v2.team_manager"
 local Terrain = require "maps.biter_battles_v2.terrain"
 local feeding = require "maps.biter_battles_v2.feeding"
@@ -21,7 +22,6 @@ local function on_player_joined_game(event)
 	if player.online_time == 0 or player.force.name == "player" then
 		Functions.init_player(player)
 	end
-	Functions.create_map_intro_button(player)
 	Team_manager.draw_top_toggle_button(player)
 end
 
@@ -31,7 +31,6 @@ local function on_gui_click(event)
 	if not element then return end
 	if not element.valid then return end
 
-	if Functions.map_intro_click(player, element) then return end
 	Team_manager.gui_click(event)
 end
 
@@ -144,6 +143,11 @@ local function on_init()
 	Init.forces()	
 	Init.source_surface()
 	Init.load_spawn()
+
+	local T = Map_info.Pop_info()
+	T.localised_category = "biter_battles"
+	T.main_caption_color = {r = 170, g = 170, b = 0}
+	T.sub_caption_color = {r = 120, g = 120, b = 0}
 end
 
 local Event = require 'utils.event'

@@ -73,11 +73,11 @@ local create_map_intro = (function(player, frame)
     scroll_pane.style.minimal_height = 320
 
     local l_3 = scroll_pane.add {type = 'label', caption = map_info.text}
-    l_3.style.font = 'heading-2'
+    l_3.style.font = 'scenario-message-dialog'
     l_3.style.single_line = false
     l_3.style.font_color = {r = 0.85, g = 0.85, b = 0.88}
     l_3.style.minimal_width = 780
-    l_3.style.horizontal_align = 'center'
+    l_3.style.horizontal_align = 'left'
     l_3.style.vertical_align = 'center'
 
     local b = frame.add {type = 'button', caption = 'CLOSE', name = 'close_map_intro'}
